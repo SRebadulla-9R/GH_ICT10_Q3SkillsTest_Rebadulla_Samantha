@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+    <title>Teams</title>
+    
+    <style>
+     /* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* modern, rounded font */
+    background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient background */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    background: #4a69bd; /* brighter blue */
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #1e3799; /* accent line for depth */
+}
+
+nav button {
+    background: #6a89cc; /* lighter shade */
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+nav button:hover {
+    background: #60a3bc; /* teal accent on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Container Sections */
+.page-section {
+    background: #ffffff;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 520px;
+    margin-top: 50px;
+    text-align: center;
+    display: none;
+    transition: all 0.4s ease;
+}
+
+.active {
+    display: block;
+}
+
+/* Form Elements */
+.form-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #4a69bd;
+    box-shadow: 0 0 6px rgba(74, 105, 189, 0.3);
+    outline: none;
+}
+
+/* Gradient Button */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    margin-top: 28px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+    transition: 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    opacity: 0.95;
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Player List Styling */
+#player-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#player-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: #2c3e50;
+    transition: 0.2s ease;
+}
+
+#player-list li:nth-child(even) {
+    background-color: #f3f6f9;
+}
+
+#player-list li:hover {
+    background-color: #dcdde1;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <div id="section-signup" class="page-section active">
+        <h2>Create Account</h2>
+        <div class="form-group">
+            <input type="text" id="user" placeholder="Username">
+            <input type="password" id="pass" placeholder="Password">
+        </div>
+        <button class="btn-submit" py-click="run_signup">Sign Up</button>
+        <p id="signup-out" style="color: #27ae60; font-weight: bold; margin-top: 20px;"></p>
+    </div>
+     <py-script src="./main.py"></py-script>
+</body>
+</html>
